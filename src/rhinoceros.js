@@ -1,11 +1,13 @@
 const uuidv4 = require('uuid/v4');
 let rhinoceroses = require('./data');
+const { filterRhinosByQuery } = require('./utils/filterRhinosByQuery');
 
-const getAll = () => {
-  return rhinoceroses;
+const getAll = (query) => {
+  const allRhinos = filterRhinosByQuery(rhinoceroses, query);
+  return allRhinos;
 };
 
-const newRhinoceros = data => {
+const newRhinoceros = (data) => {
   const newRhino = {
     id: uuidv4(),
     name: data.name,
@@ -16,13 +18,15 @@ const newRhinoceros = data => {
 };
 
 const getRhinoByID = (rhinoId) => {
-  const [rhinoMatch = null] = rhinoceroses.filter(rhino => rhino.id === rhinoId);
+  const [rhinoMatch = null] = rhinoceroses.filter(
+    (rhino) => rhino.id === rhinoId
+  );
 
   return rhinoMatch;
-}
+};
 
 module.exports = {
   getAll,
   newRhinoceros,
-  getRhinoByID
-}
+  getRhinoByID,
+};
