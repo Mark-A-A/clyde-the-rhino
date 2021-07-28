@@ -1,14 +1,23 @@
 const Router = require('koa-router');
 const router = new Router();
 const model = require('./rhinoceros');
+const { validateRhinoPostBody } = require('./validation');
 
 router.get('/rhinos', (ctx, next) => {
   const rhinoceroses = model.getAll();
   ctx.response.body = { rhinoceroses };
 });
 
-router.post('/rhinoceros', (ctx, next) => {
-  ctx.response.body = model.newRhinoceros(ctx.request.body);
+router.post('/rhino', (ctx, next) => {
+  const { body: postBody } = ctx.request
+
+  const validPostBody = validateRhinoPostBody(postBody)
+  if (!validPostBody) {
+    ctx.response.status = 400;
+    ctx.response.body = { error: "Please try again."};
+  } else {
+    ctx.response.body = model.newRhinoceros(postbody);
+  }
 });
 
 router.get('/rhino/:id', (ctx, next) => {
