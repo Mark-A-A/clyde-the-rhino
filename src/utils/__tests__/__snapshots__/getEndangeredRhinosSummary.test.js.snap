@@ -5,7 +5,10 @@ Object {
   "indian_rhinoceros": Object {
     "count": 1,
     "rhinos": Array [
-      "Phil",
+      Object {
+        "id": "cd3f1257-0902-49b5-a9ca-857313228c23",
+        "name": "Phil",
+      },
     ],
   },
   "javan_rhinoceros": undefined,

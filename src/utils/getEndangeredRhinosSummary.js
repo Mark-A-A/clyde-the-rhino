@@ -1,7 +1,10 @@
 const getEndangeredRhinosSummary = (rhinosList) => {
   const { endangeredSpeciesSummary } = rhinosList.reduce((acc, rhino, rhinoList) => {
-    const { name, species } = rhino;
-
+    const { name, species, id } = rhino;
+    const rhinoToAdd = {
+      name, 
+      id,
+    }
     const { speciesCounts, endangeredSpeciesSummary } = acc
     if (!speciesCounts[species]) {
       speciesCounts[species] = 1;
@@ -12,7 +15,7 @@ const getEndangeredRhinosSummary = (rhinosList) => {
     if (speciesCounts[species] <= 2) {
       if (!acc.endangeredSpeciesSummary[species]) {
         acc.endangeredSpeciesSummary[species] = {
-          rhinos: [name],
+          rhinos: [rhinoToAdd],
           count: 1,
         }
       } else {
@@ -21,7 +24,7 @@ const getEndangeredRhinosSummary = (rhinosList) => {
         } = acc.endangeredSpeciesSummary[species];
   
         endangeredSpeciesSummary[species].count += 1;
-        endangeredSpeciesSummary[species].rhinos = [...rhinos, name];
+        endangeredSpeciesSummary[species].rhinos = [...rhinos, rhinoToAdd];
 
       }
     } else if (speciesCounts[species] > 2){
