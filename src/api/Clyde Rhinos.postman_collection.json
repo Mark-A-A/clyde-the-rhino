@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "9556b52a-cb19-475f-bc0b-00c1dff77faf",
+		"name": "Clyde Rhinos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - All Rhinos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhinos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhinos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - All Rhinos - Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhinos?name=Spike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhinos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Spike"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET - All Rhinos - Name - Spike",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rhinos?name=Spike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rhinos"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Spike"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "118"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Jul 2021 05:29:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 1,\n    \"rhinoceroses\": [\n        {\n            \"id\": \"8704bbcb-9073-42e4-a3c7-07444dd44bc0\",\n            \"name\": \"Spike\",\n            \"species\": \"white_rhinoceros\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "GET - All Rhinos - Name -Albert",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/rhinos?name=Albert",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rhinos"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Albert"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Jul 2021 05:30:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 0,\n    \"rhinoceroses\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - All Rhinos - Species",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhinos?species=white_rhinoceros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhinos"
+					],
+					"query": [
+						{
+							"key": "species",
+							"value": "white_rhinoceros"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - All Rhinos - Name & Species",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhinos?name=Spike&species=white_rhinoceros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhinos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Spike"
+						},
+						{
+							"key": "species",
+							"value": "white_rhinoceros"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Rhino By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhino/cd3f1257-0902-49b5-a9ca-857313228c23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino",
+						"cd3f1257-0902-49b5-a9ca-857313228c23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Rhino By ID - 404 Error Response",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhino/1234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino",
+						"1234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST- Rhino  - Valid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"name\": \"Albert\",\n\t\"species\": \"white_rhinoceros\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rhino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST- Rhino  - Invalid Key",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"name\": \"Wally\",\n\t\"species\": \"white_rhinoceros\",\n\t\"weight\": 1000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rhino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST- Rhino  - Invalid Name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"name\": \"\",\n\t\"species\": \"white_rhinoceros\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rhino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST- Rhino  - Invalid Species",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"name\": \"Albert\",\n\t\"species\": \"white rhino\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/rhino",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhino"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Endangered Rhinos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rhinos/endangered",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rhinos",
+						"endangered"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
