@@ -1,11 +1,11 @@
 const uuidv4 = require('uuid/v4');
 let rhinoceroses = require('./data');
 
-exports.getAll = () => {
+const getAll = () => {
   return rhinoceroses;
 };
 
-exports.newRhinoceros = data => {
+const newRhinoceros = data => {
   const newRhino = {
     id: uuidv4(),
     name: data.name,
@@ -14,3 +14,15 @@ exports.newRhinoceros = data => {
   rhinoceroses.push(newRhino);
   return newRhino;
 };
+
+const getRhinoByID = (rhinoId) => {
+  const [rhinoMatch = null] = rhinoceroses.filter(rhino => rhino.id === rhinoId);
+
+  return rhinoMatch;
+}
+
+module.exports = {
+  getAll,
+  newRhinoceros,
+  getRhinoByID
+}
