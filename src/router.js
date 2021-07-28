@@ -16,6 +16,12 @@ router.get('/rhinos', (ctx, next) => {
   };
 });
 
+router.get('/rhinos/endangered', (ctx, next) => {
+  const endangeredRhinos = model.getEndangeredRhinos();
+
+  ctx.response.body = endangeredRhinos;
+});
+
 router.post('/rhino', (ctx, next) => {
   const { body: postBody } = ctx.request;
 
@@ -43,5 +49,6 @@ router.get('/rhino/:id', (ctx, next) => {
 
   ctx.response.body = responseBody;
 });
+
 
 module.exports = router;

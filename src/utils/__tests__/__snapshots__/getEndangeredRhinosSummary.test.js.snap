@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getEndangeredRhinosSummary => should return endangered rhinos summary 1`] = `
+Object {
+  "indian_rhinoceros": Object {
+    "count": 1,
+    "rhinos": Array [
+      "Phil",
+    ],
+  },
+  "javan_rhinoceros": undefined,
+  "white_rhinoceros": undefined,
+}
+`;

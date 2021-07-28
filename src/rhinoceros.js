@@ -1,6 +1,7 @@
 const uuidv4 = require('uuid/v4');
 let rhinoceroses = require('./data');
 const { filterRhinosByQuery } = require('./utils/filterRhinosByQuery');
+const { getEndangeredRhinosSummary } = require('./utils/getEndangeredRhinosSummary');
 
 const getAll = (query) => {
   const allRhinos = filterRhinosByQuery(rhinoceroses, query);
@@ -25,8 +26,16 @@ const getRhinoByID = (rhinoId) => {
   return rhinoMatch;
 };
 
+const getEndangeredRhinos = () => {
+  const summary  = getEndangeredRhinosSummary(rhinoceroses)
+  
+  console.dir(summary);
+  return summary
+}
+
 module.exports = {
   getAll,
   newRhinoceros,
   getRhinoByID,
+  getEndangeredRhinos
 };
