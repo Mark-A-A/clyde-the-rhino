@@ -6,7 +6,7 @@ const { validateRhinoPostBody } = require('./utils/validation');
 router.get('/rhinos', (ctx, next) => {
   const { query } = ctx.request;
 
-  console.log(query);
+  console.log('query =>', query);
 
   const rhinoceroses = model.getAll(query);
 
@@ -30,7 +30,7 @@ router.post('/rhino', (ctx, next) => {
     ctx.response.status = 400;
     ctx.response.body = { error: 'Please try again.' };
   } else {
-    ctx.response.body = model.newRhinoceros(postbody);
+    ctx.response.body = model.newRhinoceros(postBody);
   }
 });
 
